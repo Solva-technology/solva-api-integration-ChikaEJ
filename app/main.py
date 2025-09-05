@@ -1,20 +1,17 @@
-import os
 import asyncio
+import os
+
 from aiogram import Bot, Dispatcher
 from aiogram.filters import CommandStart
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import Message
-from aiogram_dialog import (
-    DialogManager, setup_dialogs, StartMode
-)
+from aiogram_dialog import DialogManager, setup_dialogs, StartMode
 from dotenv import load_dotenv
 
-from state import MySG
-from keyboards.main_menu import main_dialog
+from app.keyboards.main_menu import main_dialog
+from app.state import MySG
 
 load_dotenv()
-
-
 
 TOKEN = os.getenv("BOT_TOKEN")
 bot = Bot(token=TOKEN)

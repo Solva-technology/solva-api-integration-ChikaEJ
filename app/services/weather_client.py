@@ -5,8 +5,9 @@ from typing import Any
 
 import aiohttp
 from dotenv import load_dotenv
-from services.mongo_client import AsyncMongoDB
-from utils.logging import configure_logging
+
+from app.services.mongo_client import AsyncMongoDB
+from app.utils.logging import configure_logging
 
 load_dotenv()
 
@@ -46,10 +47,10 @@ def format_weather(data: dict) -> dict[str, Any] and str:
     )
 
 
-async def get_weather_of_city(city):
+async def get_weather_of_city(city, api_key=API_KEY):
     params = {
         "q": city,
-        "appid": API_KEY,
+        "appid": api_key,
         "units": "metric",
         "lang": "ru",
     }

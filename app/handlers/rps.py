@@ -4,8 +4,9 @@ import random
 from aiogram.types import CallbackQuery
 from aiogram_dialog import DialogManager, StartMode
 from aiogram_dialog.widgets.kbd import Button
-from state import MySG
-from utils.logging import configure_logging
+
+from app.state import MySG
+from app.utils.logging import configure_logging
 
 configure_logging()
 

@@ -2,10 +2,11 @@ from aiogram_dialog import Dialog, Window
 from aiogram_dialog.widgets.input import MessageInput
 from aiogram_dialog.widgets.kbd import Button, Row
 from aiogram_dialog.widgets.text import Const
-from handlers.rps import on_choice
-from handlers.weather import weather_of_city
-from keyboards.inline import on_rps, on_weather
-from state import MySG
+
+from app.handlers.rps import on_choice
+from app.handlers.weather import weather_of_city
+from app.keyboards.inline import on_rps, on_weather
+from app.state import MySG
 
 main_dialog = Dialog(
     Window(

@@ -2,7 +2,7 @@ from aiogram.types import CallbackQuery
 from aiogram_dialog import DialogManager
 from aiogram_dialog.widgets.kbd import Button
 
-from state import MySG
+from app.state import MySG
 
 
 async def on_weather(c: CallbackQuery, b: Button, m: DialogManager):
