@@ -11,7 +11,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
     volumes:
-      - ./data:/data/db   # сохраняем данные локально
+      - mongo_data:/data/db   # сохраняем данные в volume
 
   mongo-express:
     image: mongo-express:latest
@@ -23,3 +23,14 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_SERVER: mongo
+
+  bot:
+    build:
+      context: ./
+    container_name: mybot
+    restart: always
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data:
